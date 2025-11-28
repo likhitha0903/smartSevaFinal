@@ -284,29 +284,42 @@
   </div>
 </nav>
 
+<!-- TOAST CONTAINER -->
+<div class="toast-container position-fixed top-20 start-50 translate-middle-x p-3">
+  <div id="smartToast" class="toast align-items-center text-bg-primary border-0" role="alert">
+    <div class="d-flex">
+      <div class="toast-body" id="toastMessage">
+        <!-- Message goes here -->
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+    </div>
+  </div>
+</div>
+
+
     <main class="flex-grow-1">
       <!-- =============== AI HERO (shown first) =============== -->
       <section id="ai-hero" class="py-5">
         <div class="container ai-hero-inner">
           <div class="row align-items-center g-4">
             <!-- Left: image -->
-            <div class="col-md-5">
-              <div class="ai-hero-image-wrapper">
+            <div class="col-md-6">
+              <div class="ai-hero-image-wrapper me-5">
                 <!-- Replace src with your AI illustration -->
                 <img
-                  src="./assets/ai-hero.jpg"
+                  src="./assets/ourai.jpeg"
                   alt="SmartSeva AI analysing complaints"
                 />
               </div>
             </div>
 
             <!-- Right: text -->
-            <div class="col-md-7">
+            <div class="col-md-6">
               <div class="ai-hero-tag mb-3">
                 <i class="bi bi-cpu-fill"></i>
                 <span>SmartSeva AI · Pilot Preview</span>
               </div>
-              <h1 class="ai-hero-title mb-3">
+              <h1 class="ai-hero-title mb-3 heading">
                 Let our AI understand your grievance in seconds.
               </h1>
               <p class="mb-3 text-muted">
@@ -459,7 +472,7 @@
 
                 <!-- AI Result box -->
                 <div id="aiResult" class="alert alert-info mt-4 d-none">
-                  <strong>AI Prediction:</strong>
+                  <strong><span><i class="bi bi-robot"></i></span>AI Prediction:</strong>
                   <div class="mt-1 small" id="aiResultContent"></div>
                 </div>
                 <div id="categoryError" class="alert alert-danger mt-3 d-none">
@@ -470,68 +483,22 @@
             </div>
 
             <!-- RIGHT: Video instead of Map -->
-     <div class="col-md-6">
-             
-              <div class="card ai-video-card shadow h-100">
-                  <div class="d-flex flex-wrap wrap">
-                    <!-- Garbage OK -->
-                    <div class="col-sm-12 col-md-6 col-lg-6 p-2">
-                      <div class="photo-wrapper">
-                        <span class="photo-label">Garbage</span>
-                        <img src="./assets/gb-ok.jpg" width="100%" height="180px" class="rounded">
-                      </div>
-                    </div>
+<div class="col-md-6">
+  <div class="video-card mb-3">
+    <div class="video-frame">
+      <video autoplay muted loop playsinline>
+        <source src="./assets/Process.mp4" type="video/mp4" />
+      </video>
+    </div>
 
-                    <!-- Garbage Not OK -->
-                    <div class="col-sm-12 col-md-6 col-lg-6 p-2">
-                      <div class="photo-wrapper">
-                        <span class="photo-label">Garbage</span>
-                        <img src="./assets/gb-nok.jpg" width="100%" height="180px" class="rounded">
-                      </div>
-                    </div>
-
-                    <!-- Child Labour OK -->
-                    <div class="col-sm-12 col-md-6 col-lg-6 p-2">
-                      <div class="photo-wrapper">
-                        <span class="photo-label">Child Labour</span>
-                        <img src="./assets/cl-ok.jpg" width="100%" height="180px" class="rounded">
-                      </div>
-                    </div>
-
-                    <!-- Child Labour Not OK -->
-                    <div class="col-sm-12 col-md-6 col-lg-6 p-2">
-                      <div class="photo-wrapper">
-                        <span class="photo-label">Child Labour</span>
-                        <img src="./assets/cl-nok.jpg" width="100%" height="180px" class="rounded">
-                      </div>
-                    </div>
-
-                    <!-- Pothole OK -->
-                    <div class="col-sm-12 col-md-6 col-lg-6 p-2">
-                      <div class="photo-wrapper">
-                        <span class="photo-label">Pothole</span>
-                        <img src="./assets/ph-ok.jpg" width="100%" height="180px" class="rounded">
-                      </div>
-                    </div>
-
-                    <!-- Pothole Not OK -->
-                    <div class="col-sm-12 col-md-6 col-lg-6 p-2">
-                      <div class="photo-wrapper">
-                        <span class="photo-label">Pothole</span>
-                        <img src="./assets/ph-nok.jpg" width="100%" height="180px" class="rounded">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <p class="small text-muted mt-2">Photo guidelines to help capture issues clearly for better AI results.</p>
-              
-            </div>
-
-
-            <p class="small text-muted mt-2">
+    <div class="video-label">Demo view: how SmartSeva AI reads complaints,<br> identifies risk, and
+              suggests priority.</div>
+  </div>
+</div>
+            <!-- <p class="small text-muted mt-2">
               Demo view: how SmartSeva AI reads complaints, identifies risk, and
               suggests priority.
-            </p>
+            </p> -->
           </div>
         </div>
       </section>
@@ -643,654 +610,357 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="app.js"></script>
-    <!-- <script>
-      // ====== SECTION TOGGLE: hero -> predict ======
-      const heroSection = document.getElementById("ai-hero");
-      const predictSection = document.getElementById("ai-predict-section");
-      const btnTryModel = document.getElementById("btnTryModel");
+ 
 
-      if (btnTryModel) {
-        btnTryModel.addEventListener("click", () => {
-          if (heroSection) heroSection.classList.add("d-none");
-          if (predictSection) {
-            predictSection.classList.remove("d-none");
-            predictSection.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
-        });
-      }
+ <script>
+    // ====== SECTION TOGGLE: hero -> predict ======
+const heroSection = document.getElementById("ai-hero");
+const predictSection = document.getElementById("ai-predict-section");
+const btnTryModel = document.getElementById("btnTryModel");
 
-      // ====== IMAGE / CAMERA HANDLING ======
-      const fileBtn = document.getElementById("fileBtn");
-      const photoInput = document.getElementById("photoInput");
-      const cameraBtn = document.getElementById("cameraBtn");
-      const cameraContainer = document.getElementById("cameraContainer");
-      const cameraVideo = document.getElementById("camera");
-      const captureBtn = document.getElementById("captureBtn");
-      const previewImg = document.getElementById("preview");
-      const locationInput = document.getElementById("manualLocation");
-      const btnSubmitComplaint = document.getElementById("btnSubmitComplaint");
+async function checkLogin() {
+  try {
+    const resp = await fetch("http://localhost:9654/api/user/current", {
+      credentials: "include"
+    });
 
-      let cameraStream = null;
-      let typingTimeout;
-      let aiPredictedCategory = null; // Global variable to store AI prediction
+    if (!resp.ok) return false;
 
-      // Automatic Location (GPS) with reverse geocoding
-      function getUserLocation() {
-        if (!navigator.geolocation || !locationInput) return;
+    const data = await resp.json();
+    return data.status === "ok";
+  } catch (err) {
+    return false;
+  }
+}
 
-        navigator.geolocation.getCurrentPosition((pos) => {
-          const { latitude: lat, longitude: lng } = pos.coords;
+function showToast(message, type = "primary") {
+  const toastEl = document.getElementById("smartToast");
+  const toastBody = document.getElementById("toastMessage");
 
-          fetch(
-            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`
-          )
-            .then((res) => res.json())
-            .then((data) => {
-              if (!locationInput.value.trim()) {
-                locationInput.value =
-                  data.display_name ||
-                  `Lat ${lat.toFixed(4)}, Lng ${lng.toFixed(4)}`;
-              }
-            })
-            .catch((err) => {
-              console.error("Reverse geocode error:", err);
-              if (!locationInput.value.trim()) {
-                locationInput.value = `Lat ${lat.toFixed(4)}, Lng ${lng.toFixed(4)}`;
-              }
-            });
-        });
-      }
+  toastBody.textContent = message;
 
-      function stopCamera() {
-        if (cameraStream) {
-          cameraStream.getTracks().forEach((t) => t.stop());
-          cameraStream = null;
+  // change colors
+  toastEl.className = `toast text-bg-${type} border-0`;
+
+  const toast = new bootstrap.Toast(toastEl);
+  toast.show();
+}
+
+
+if (btnTryModel) {
+  btnTryModel.addEventListener("click", async () => {
+
+    const loggedIn = await checkLogin();
+
+    if (!loggedIn) {
+      // alert("Please login to use SmartSeva AI.");
+      showToast("Please login to use SmartSeva AI", "warning");
+      // window.location.href = "login.html";
+      setTimeout(() => {
+  window.location.href = "login.html";
+}, 2000);
+      return;
+    }
+
+    // ✔ Show model only if logged in
+    heroSection.classList.add("d-none");
+    predictSection.classList.remove("d-none");
+    predictSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
+
+
+// ====== IMAGE / CAMERA HANDLING ======
+const fileBtn = document.getElementById("fileBtn");
+const photoInput = document.getElementById("photoInput");
+const cameraBtn = document.getElementById("cameraBtn");
+const cameraContainer = document.getElementById("cameraContainer");
+const cameraVideo = document.getElementById("camera");
+const captureBtn = document.getElementById("captureBtn");
+const previewImg = document.getElementById("preview");
+const locationInput = document.getElementById("manualLocation");
+const btnSubmitComplaint = document.getElementById("btnSubmitComplaint");
+
+let cameraStream = null;
+let aiPredictedCategory = null;
+let aiPredictedSeverity = null; // <-- NEW: store AI severity
+
+// Automatic Location (GPS) with reverse geocoding
+function getUserLocation() {
+  if (!navigator.geolocation || !locationInput) return;
+
+  navigator.geolocation.getCurrentPosition((pos) => {
+    const { latitude: lat, longitude: lng } = pos.coords;
+
+    fetch(
+      `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (!locationInput.value.trim()) {
+          locationInput.value =
+            data.display_name ||
+            `Lat ${lat.toFixed(4)}, Lng ${lng.toFixed(4)}`;
         }
-      }
-
-      // file button
-      if (fileBtn && photoInput) {
-        fileBtn.addEventListener("click", () => {
-          stopCamera();
-          if (cameraContainer) cameraContainer.style.display = "none";
-          photoInput.click();
-        });
-
-        photoInput.addEventListener("change", (e) => {
-          const file = e.target.files[0];
-          if (!file) return;
-          const reader = new FileReader();
-          reader.onload = (ev) => {
-            previewImg.src = ev.target.result;
-            previewImg.classList.remove("d-none");
-          };
-          reader.readAsDataURL(file);
-
-          // use new location logic
-          getUserLocation();
-        });
-      }
-
-      // camera button
-      if (cameraBtn && cameraContainer && cameraVideo) {
-        cameraBtn.addEventListener("click", async () => {
-          cameraContainer.style.display = "block";
-          try {
-            cameraStream = await navigator.mediaDevices.getUserMedia({
-              video: true,
-            });
-            cameraVideo.srcObject = cameraStream;
-          } catch (err) {
-            alert("Camera access blocked. Please allow camera or upload a photo.");
-            cameraContainer.style.display = "none";
-          }
-        });
-      }
-
-      // capture
-      if (captureBtn && cameraVideo) {
-        captureBtn.addEventListener("click", () => {
-          const canvas = document.createElement("canvas");
-          canvas.width = cameraVideo.videoWidth;
-          canvas.height = cameraVideo.videoHeight;
-          const ctx = canvas.getContext("2d");
-          ctx.drawImage(cameraVideo, 0, 0);
-          const dataUrl = canvas.toDataURL("image/png");
-
-          previewImg.src = dataUrl;
-          previewImg.classList.remove("d-none");
-
-          stopCamera();
-          cameraContainer.style.display = "none";
-
-          // use new location logic
-          getUserLocation();
-        });
-      }
-
-      // ====== AI PREDICTION ======
-      const btnPredict = document.getElementById("btnPredict");
-      const aiResultBox = document.getElementById("aiResult");
-      const aiResultContent = document.getElementById("aiResultContent");
-      const categoryError = document.getElementById("categoryError");
-
-      if (btnPredict && aiResultBox && aiResultContent) {
-        btnPredict.addEventListener("click", async () => {
-          let file = photoInput.files[0];
-
-          if (!file && previewImg.src.startsWith("data:image")) {
-            const response = await fetch(previewImg.src);
-            const blob = await response.blob();
-            file = new File([blob], "captured.png", { type: "image/png" });
-          }
-
-          if (!file) {
-            alert("Please upload or capture an image first.");
-            return;
-          }
-
-          const formData = new FormData();
-          formData.append("file", file);
-
-          aiResultBox.classList.remove("d-none");
-          aiResultContent.innerHTML = "⏳ Processing image... please wait.";
-
-          try {
-            const resp = await fetch("http://localhost:9654/api/predict", {
-              method: "POST",
-              body: formData
-            });
-
-            const data = await resp.json();
-
-            // Extract predictions
-            const main = data.main_output;
-            const severity = data.severity_output;
-
-            // Find highest probability
-            const mainMaxIndex = main.indexOf(Math.max(...main));
-            const severityMaxIndex = severity.indexOf(Math.max(...severity));
-
-            // Labels (replace with your model's actual labels)
-            const mainLabels = ["Garbage", "Road Issue", "Drainage Issue"];
-            const severityLabels = ["Very Low", "Low", "Medium", "High", "Very High", "Critical"];
-
-            // Store the predicted category globally
-            aiPredictedCategory = mainLabels[mainMaxIndex];
-            const userSelectedCategory = document.getElementById("category").value;
-
-            // Enable submit button after prediction
-            if (btnSubmitComplaint) {
-              btnSubmitComplaint.disabled = false;
-            }
-
-            // Show/hide category error
-            if (categoryError) {
-              if (aiPredictedCategory === userSelectedCategory) {
-                categoryError.classList.add("d-none");
-              } else {
-                categoryError.classList.remove("d-none");
-              }
-            }
-
-            aiResultContent.innerHTML = `
-              <b>Predicted Category:</b> ${aiPredictedCategory} <br/>
-              <b>Category Confidence:</b> ${(main[mainMaxIndex] * 100).toFixed(2)}% <br/><br/>
-
-              <b>Predicted Severity:</b> ${severityLabels[severityMaxIndex]} <br/>
-              <b>Severity Confidence:</b> ${(severity[severityMaxIndex] * 100).toFixed(2)}% <br/><br/>
-
-              ${aiPredictedCategory === userSelectedCategory ? 
-                '<span style="color: green;">✅ Category matches your selection</span>' : 
-                '<span style="color: orange;">⚠️ Category differs from your selection</span>'}
-            `;
-          } catch (err) {
-            aiResultContent.innerHTML = `
-              <span class="text-danger">❌ Error: Could not connect to backend.<br>${err}</span>
-            `;
-            aiPredictedCategory = null;
-          }
-        });
-      }
-
-      // ====== FORM SUBMIT (WITH CATEGORY MATCHING) ======
-      const complaintForm = document.getElementById("complaintForm");
-      const descriptionEl = document.getElementById("description");
-      const categoryEl = document.getElementById("category");
-
-      // Helper function to convert file to base64
-      function fileToBase64(file) {
-        return new Promise((resolve, reject) => {
-          const reader = new FileReader();
-          reader.readAsDataURL(file);
-          reader.onload = () => resolve(reader.result);
-          reader.onerror = error => reject(error);
-        });
-      }
-
-      if (complaintForm) {
-        complaintForm.addEventListener("submit", async (e) => {
-          e.preventDefault();
-
-          const description = descriptionEl.value.trim();
-          const userCategory = categoryEl.value;
-          const location = locationInput.value.trim();
-          const file = photoInput.files[0];
-          const previewSrc = previewImg.src || "";
-
-          const hasUploaded = !!file;
-          const hasCaptured = previewSrc.startsWith("data:image");
-
-          // Validation
-          if (!hasUploaded && !hasCaptured) {
-            alert("Please upload an image or capture a photo.");
-            return;
-          }
-          if (!description) {
-            alert("Please provide a description of the issue.");
-            return;
-          }
-          if (!userCategory) {
-            alert("Please select a category.");
-            return;
-          }
-          if (!location) {
-            alert("Please enter a location.");
-            return;
-          }
-
-          // Check if AI prediction exists and categories match
-          if (aiPredictedCategory && userCategory !== aiPredictedCategory) {
-            const confirmSubmit = confirm(
-              `Warning: Your selected category (${userCategory}) doesn't match the AI prediction (${aiPredictedCategory}). Do you still want to submit?`
-            );
-            
-            if (!confirmSubmit) {
-              return; // Stop submission if user cancels
-            }
-          }
-
-          // Prepare image data
-          let imageData = null;
-          if (hasUploaded) {
-            imageData = await fileToBase64(file);
-          } else if (hasCaptured) {
-            imageData = previewSrc; // Already base64
-          }
-
-          // Build complaint data
-          const complaintData = {
-            description,
-            category: userCategory,
-            location,
-            image: imageData,
-            ai_predicted_category: aiPredictedCategory || "Not predicted"
-          };
-
-          // Submit to backend
-          try {
-            const response = await fetch('/api/submit-complaint', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(complaintData)
-            });
-
-            if (response.ok) {
-              const result = await response.json();
-              alert("Complaint submitted successfully!");
-              
-              // Reset form
-              complaintForm.reset();
-              previewImg.classList.add("d-none");
-              previewImg.src = "";
-              photoInput.value = "";
-              aiResultBox.classList.add("d-none");
-              categoryError.classList.add("d-none");
-              if (btnSubmitComplaint) {
-                btnSubmitComplaint.disabled = true;
-              }
-              aiPredictedCategory = null; // Reset AI prediction
-            } else {
-              throw new Error('Failed to submit complaint');
-            }
-          } catch (error) {
-            console.error("Error submitting complaint:", error);
-            alert("Error submitting complaint. Please try again.");
-          }
-        });
-      }
-
-      // Stop camera when leaving page (optional safety)
-      window.addEventListener("beforeunload", stopCamera);
-    </script> -->
-
-    
-    <script>
-      // ====== SECTION TOGGLE: hero -> predict ======
-      const heroSection = document.getElementById("ai-hero");
-      const predictSection = document.getElementById("ai-predict-section");
-      const btnTryModel = document.getElementById("btnTryModel");
-
-      if (btnTryModel) {
-        btnTryModel.addEventListener("click", () => {
-          if (heroSection) heroSection.classList.add("d-none");
-          if (predictSection) {
-            predictSection.classList.remove("d-none");
-            predictSection.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
-        });
-      }
-
-      // ====== IMAGE / CAMERA HANDLING ======
-      const fileBtn = document.getElementById("fileBtn");
-      const photoInput = document.getElementById("photoInput");
-      const cameraBtn = document.getElementById("cameraBtn");
-      const cameraContainer = document.getElementById("cameraContainer");
-      const cameraVideo = document.getElementById("camera");
-      const captureBtn = document.getElementById("captureBtn");
-      const previewImg = document.getElementById("preview");
-      const locationInput = document.getElementById("manualLocation");
-      const btnSubmitComplaint = document.getElementById("btnSubmitComplaint");
-
-      let cameraStream = null;
-      let typingTimeout;
-      let aiPredictedCategory = null; // Global variable to store AI prediction
-
-      // Automatic Location (GPS) with reverse geocoding
-      function getUserLocation() {
-        if (!navigator.geolocation || !locationInput) return;
-
-        navigator.geolocation.getCurrentPosition((pos) => {
-          const { latitude: lat, longitude: lng } = pos.coords;
-
-          fetch(
-            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`
-          )
-            .then((res) => res.json())
-            .then((data) => {
-              if (!locationInput.value.trim()) {
-                locationInput.value =
-                  data.display_name ||
-                  `Lat ${lat.toFixed(4)}, Lng ${lng.toFixed(4)}`;
-              }
-            })
-            .catch((err) => {
-              console.error("Reverse geocode error:", err);
-              if (!locationInput.value.trim()) {
-                locationInput.value = `Lat ${lat.toFixed(4)}, Lng ${lng.toFixed(4)}`;
-              }
-            });
-        });
-      }
-
-      function stopCamera() {
-        if (cameraStream) {
-          cameraStream.getTracks().forEach((t) => t.stop());
-          cameraStream = null;
+      })
+      .catch((err) => {
+        console.error("Reverse geocode error:", err);
+        if (!locationInput.value.trim()) {
+          locationInput.value = `Lat ${lat.toFixed(4)}, Lng ${lng.toFixed(4)}`;
         }
+      });
+  });
+}
+
+function stopCamera() {
+  if (cameraStream) {
+    cameraStream.getTracks().forEach((t) => t.stop());
+    cameraStream = null;
+  }
+}
+
+// File button
+if (fileBtn && photoInput) {
+  fileBtn.addEventListener("click", () => {
+    stopCamera();
+    if (cameraContainer) cameraContainer.style.display = "none";
+    photoInput.click();
+  });
+
+  photoInput.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      previewImg.src = ev.target.result;
+      previewImg.classList.remove("d-none");
+    };
+    reader.readAsDataURL(file);
+
+    getUserLocation();
+  });
+}
+
+// Camera button
+if (cameraBtn && cameraContainer && cameraVideo) {
+  cameraBtn.addEventListener("click", async () => {
+    cameraContainer.style.display = "block";
+    try {
+      cameraStream = await navigator.mediaDevices.getUserMedia({ video: true });
+      cameraVideo.srcObject = cameraStream;
+    } catch (err) {
+      alert("Camera access blocked. Please allow camera or upload a photo.");
+      cameraContainer.style.display = "none";
+    }
+  });
+}
+
+// Capture photo
+if (captureBtn && cameraVideo) {
+  captureBtn.addEventListener("click", () => {
+    const canvas = document.createElement("canvas");
+    canvas.width = cameraVideo.videoWidth;
+    canvas.height = cameraVideo.videoHeight;
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(cameraVideo, 0, 0);
+    const dataUrl = canvas.toDataURL("image/png");
+
+    previewImg.src = dataUrl;
+    previewImg.classList.remove("d-none");
+
+    stopCamera();
+    cameraContainer.style.display = "none";
+
+    getUserLocation();
+  });
+}
+
+// ====== AI PREDICTION ======
+const btnPredict = document.getElementById("btnPredict");
+const aiResultBox = document.getElementById("aiResult");
+const aiResultContent = document.getElementById("aiResultContent");
+const categoryError = document.getElementById("categoryError");
+const categoryEl = document.getElementById("category");
+
+if (btnPredict && aiResultBox && aiResultContent) {
+  btnPredict.addEventListener("click", async () => {
+    let file = photoInput.files[0];
+    if (!file && previewImg.src.startsWith("data:image")) {
+      const response = await fetch(previewImg.src);
+      const blob = await response.blob();
+      file = new File([blob], "captured.png", { type: "image/png" });
+    }
+    if (!file) {
+      alert("Please upload or capture an image first.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    aiResultBox.classList.remove("d-none");
+    aiResultContent.innerHTML = "⏳ Processing image... please wait.";
+
+    try {
+      const resp = await fetch("http://localhost:9654/api/predict", {
+        method: "POST",
+        body: formData
+      });
+      const data = await resp.json();
+
+      const main = data.main_output;
+      const severity = data.severity_output;
+
+      const mainMaxIndex = main.indexOf(Math.max(...main));
+      const severityMaxIndex = severity.indexOf(Math.max(...severity));
+
+      const mainLabels = ["Garbage", "Road Issue", "Drainage Issue"];
+      const severityLabels = ["Low", "Medium", "High"];
+
+      aiPredictedCategory = mainLabels[mainMaxIndex];
+      aiPredictedSeverity = severityLabels[severityMaxIndex]; // <-- NEW
+
+      const userSelectedCategory = categoryEl.value;
+
+      if (btnSubmitComplaint) btnSubmitComplaint.disabled = false;
+
+      if (categoryError) {
+        if (aiPredictedCategory === userSelectedCategory) categoryError.classList.add("d-none");
+        else categoryError.classList.remove("d-none");
       }
 
-      // file button
-      if (fileBtn && photoInput) {
-        fileBtn.addEventListener("click", () => {
-          stopCamera();
-          if (cameraContainer) cameraContainer.style.display = "none";
-          photoInput.click();
-        });
+    aiResultContent.innerHTML = `
+  <div class="ai-result-card">
+      <div class="ai-result-title">
+        
+      </div>
 
-        photoInput.addEventListener("change", (e) => {
-          const file = e.target.files[0];
-          if (!file) return;
-          const reader = new FileReader();
-          reader.onload = (ev) => {
-            previewImg.src = ev.target.result;
-            previewImg.classList.remove("d-none");
-          };
-          reader.readAsDataURL(file);
+      <div class="ai-result-item">
+        <b>Category:</b> 
+        <span>${aiPredictedCategory}</span>
+        <span class="text-muted small">(${(main[mainMaxIndex] * 100).toFixed(2)}%)</span>
+      </div>
 
-          // use new location logic
-          getUserLocation();
-        });
+      <div class="ai-result-item">
+        <b>Severity:</b> 
+        <span class="
+          ${aiPredictedSeverity === 'High' ? 'severity-high' : ''} 
+          ${aiPredictedSeverity === 'Medium' ? 'severity-medium' : ''} 
+          ${aiPredictedSeverity === 'Low' ? 'severity-low' : ''}
+        ">
+          ${aiPredictedSeverity}
+        </span>
+        <span class="text-muted small">(${(severity[severityMaxIndex] * 100).toFixed(2)}%)</span>
+      </div>
+
+      <div class="ai-result-item mt-2">
+        ${aiPredictedCategory === userSelectedCategory 
+          ? '<span style="color: green;">✅ Category matches your selection</span>'
+          : '<span style="color: orange;">⚠️ Category differs from your selection</span>'}
+      </div>
+  </div>
+`;
+    } catch (err) {
+      aiResultContent.innerHTML = `<span class="text-danger">❌ Error: Could not connect to backend.<br>${err}</span>`;
+      aiPredictedCategory = null;
+      aiPredictedSeverity = null;
+    }
+  });
+}
+
+// ====== FORM SUBMIT ======
+const complaintForm = document.getElementById("complaintForm");
+const descriptionEl = document.getElementById("description");
+
+if (complaintForm) {
+  complaintForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const description = descriptionEl.value.trim();
+    const userCategory = categoryEl.value;
+    const location = locationInput.value.trim();
+    const file = photoInput.files[0];
+    const previewSrc = previewImg.src || "";
+
+    const hasUploaded = !!file;
+    const hasCaptured = previewSrc.startsWith("data:image");
+
+    if (!hasUploaded && !hasCaptured) { alert("Please upload an image or capture a photo."); return; }
+    if (!userCategory) { alert("Please select a category."); return; }
+    if (!location) { alert("Please enter a location."); return; }
+    if (!aiPredictedSeverity) { alert("Please get AI severity prediction first."); return; } // <-- NEW
+
+    if (aiPredictedCategory && userCategory !== aiPredictedCategory) {
+        alert(
+    `Warning: Your selected category (${userCategory}) doesn't match the AI prediction (${aiPredictedCategory}).`
+  );
+  return; 
+    }
+
+    // ====== Upload image first ======
+    let imageUrl = "";
+    try {
+      let uploadFile = hasUploaded ? file : await (await fetch(previewSrc)).blob();
+      const formData = new FormData();
+      formData.append("file", uploadFile);
+
+      const uploadResp = await fetch("http://localhost:9654/api/complaints/upload", {
+        method: "POST",
+        body: formData
+      });
+      const uploadData = await uploadResp.json();
+      imageUrl = uploadData.url || "";
+    } catch (err) {
+      console.error("Image upload failed:", err);
+      alert("Image upload failed. Try again.");
+      return;
+    }
+
+    // ====== Submit complaint ======
+    const complaintData = {
+      category: userCategory,
+      description: description || "No description provided",
+      location,
+      imageUrl,
+      severity: aiPredictedSeverity // <-- SEND AI severity
+    };
+
+    try {
+      const response = await fetch("http://localhost:9654/api/complaints/add", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(complaintData),
+         credentials: "include",
+      });
+
+      if (response.ok) {
+        // alert("Complaint submitted successfully!");
+        showToast("Complaint submitted successfully!", "success");
+
+        // Reset form
+        complaintForm.reset();
+        previewImg.classList.add("d-none");
+        previewImg.src = "";
+        photoInput.value = "";
+        aiResultBox.classList.add("d-none");
+        categoryError.classList.add("d-none");
+        if (btnSubmitComplaint) btnSubmitComplaint.disabled = true;
+        aiPredictedCategory = null;
+        aiPredictedSeverity = null; // <-- RESET
+      } else {
+        throw new Error("Failed to submit complaint");
       }
+    } catch (error) {
+      console.error("Error submitting complaint:", error);
+      alert("Error submitting complaint. Please try again.");
+    }
+  });
+}
 
-      // camera button
-      if (cameraBtn && cameraContainer && cameraVideo) {
-        cameraBtn.addEventListener("click", async () => {
-          cameraContainer.style.display = "block";
-          try {
-            cameraStream = await navigator.mediaDevices.getUserMedia({
-              video: true,
-            });
-            cameraVideo.srcObject = cameraStream;
-          } catch (err) {
-            alert("Camera access blocked. Please allow camera or upload a photo.");
-            cameraContainer.style.display = "none";
-          }
-        });
-      }
+// Stop camera when leaving page
+window.addEventListener("beforeunload", stopCamera);
 
-      // capture
-      if (captureBtn && cameraVideo) {
-        captureBtn.addEventListener("click", () => {
-          const canvas = document.createElement("canvas");
-          canvas.width = cameraVideo.videoWidth;
-          canvas.height = cameraVideo.videoHeight;
-          const ctx = canvas.getContext("2d");
-          ctx.drawImage(cameraVideo, 0, 0);
-          const dataUrl = canvas.toDataURL("image/png");
+  </script>
+</body>
 
-          previewImg.src = dataUrl;
-          previewImg.classList.remove("d-none");
-
-          stopCamera();
-          cameraContainer.style.display = "none";
-
-          // use new location logic
-          getUserLocation();
-        });
-      }
-
-      // ====== AI PREDICTION ======
-      const btnPredict = document.getElementById("btnPredict");
-      const aiResultBox = document.getElementById("aiResult");
-      const aiResultContent = document.getElementById("aiResultContent");
-      const categoryError = document.getElementById("categoryError");
-
-      if (btnPredict && aiResultBox && aiResultContent) {
-        btnPredict.addEventListener("click", async () => {
-          let file = photoInput.files[0];
-
-          if (!file && previewImg.src.startsWith("data:image")) {
-            const response = await fetch(previewImg.src);
-            const blob = await response.blob();
-            file = new File([blob], "captured.png", { type: "image/png" });
-          }
-
-          if (!file) {
-            alert("Please upload or capture an image first.");
-            return;
-          }
-
-          const formData = new FormData();
-          formData.append("file", file);
-
-          aiResultBox.classList.remove("d-none");
-          aiResultContent.innerHTML = "⏳ Processing image... please wait.";
-
-          try {
-            const resp = await fetch("http://localhost:9654/api/predict", {
-              method: "POST",
-              body: formData
-            });
-
-            const data = await resp.json();
-
-            // Extract predictions
-            const main = data.main_output;
-            const severity = data.severity_output;
-
-            // Find highest probability
-            const mainMaxIndex = main.indexOf(Math.max(...main));
-            const severityMaxIndex = severity.indexOf(Math.max(...severity));
-
-            // Labels (replace with your model's actual labels)
-            const mainLabels = ["Garbage", "Road Issue", "Drainage Issue"];
-            const severityLabels = ["Very Low", "Low", "Medium", "High", "Very High", "Critical"];
-
-            // Store the predicted category globally
-            aiPredictedCategory = mainLabels[mainMaxIndex];
-            const userSelectedCategory = document.getElementById("category").value;
-
-            // Enable submit button after prediction
-            if (btnSubmitComplaint) {
-              btnSubmitComplaint.disabled = false;
-            }
-
-            // Show/hide category error
-            if (categoryError) {
-              if (aiPredictedCategory === userSelectedCategory) {
-                categoryError.classList.add("d-none");
-              } else {
-                categoryError.classList.remove("d-none");
-              }
-            }
-
-            aiResultContent.innerHTML = `
-              <b>Predicted Category:</b> ${aiPredictedCategory} <br/>
-              <b>Category Confidence:</b> ${(main[mainMaxIndex] * 100).toFixed(2)}% <br/><br/>
-
-              <b>Predicted Severity:</b> ${severityLabels[severityMaxIndex]} <br/>
-              <b>Severity Confidence:</b> ${(severity[severityMaxIndex] * 100).toFixed(2)}% <br/><br/>
-
-              ${aiPredictedCategory === userSelectedCategory ? 
-                '<span style="color: green;">✅ Category matches your selection</span>' : 
-                '<span style="color: orange;">⚠️ Category differs from your selection</span>'}
-            `;
-          } catch (err) {
-            aiResultContent.innerHTML = `
-              <span class="text-danger">❌ Error: Could not connect to backend.<br>${err}</span>
-            `;
-            aiPredictedCategory = null;
-          }
-        });
-      }
-
-      // ====== FORM SUBMIT (WITH CATEGORY MATCHING) ======
-      const complaintForm = document.getElementById("complaintForm");
-      const descriptionEl = document.getElementById("description");
-      const categoryEl = document.getElementById("category");
-
-      // Helper function to convert file to base64
-      function fileToBase64(file) {
-        return new Promise((resolve, reject) => {
-          const reader = new FileReader();
-          reader.readAsDataURL(file);
-          reader.onload = () => resolve(reader.result);
-          reader.onerror = error => reject(error);
-        });
-      }
-
-      if (complaintForm) {
-        complaintForm.addEventListener("submit", async (e) => {
-          e.preventDefault();
-
-          const description = descriptionEl.value.trim();
-          const userCategory = categoryEl.value;
-          const location = locationInput.value.trim();
-          const file = photoInput.files[0];
-          const previewSrc = previewImg.src || "";
-
-          const hasUploaded = !!file;
-          const hasCaptured = previewSrc.startsWith("data:image");
-
-          // Validation
-          if (!hasUploaded && !hasCaptured) {
-            alert("Please upload an image or capture a photo.");
-            return;
-          }
-          // REMOVED description validation - now optional
-          if (!userCategory) {
-            alert("Please select a category.");
-            return;
-          }
-          if (!location) {
-            alert("Please enter a location.");
-            return;
-          }
-
-          // Check if AI prediction exists and categories match
-          if (aiPredictedCategory && userCategory !== aiPredictedCategory) {
-            const confirmSubmit = confirm(
-              `Warning: Your selected category (${userCategory}) doesn't match the AI prediction (${aiPredictedCategory}). Do you still want to submit?`
-            );
-            
-            if (!confirmSubmit) {
-              return; // Stop submission if user cancels
-            }
-          }
-
-          // Prepare image data
-          let imageData = null;
-          if (hasUploaded) {
-            imageData = await fileToBase64(file);
-          } else if (hasCaptured) {
-            imageData = previewSrc; // Already base64
-          }
-
-          // Build complaint data
-          const complaintData = {
-            description: description || "No description provided", // Handle empty description
-            category: userCategory,
-            location,
-            image: imageData,
-            ai_predicted_category: aiPredictedCategory || "Not predicted"
-          };
-
-          // Submit to backend
-          try {
-            const response = await fetch('/api/submit-complaint', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(complaintData)
-            });
-
-            if (response.ok) {
-              const result = await response.json();
-              alert("Complaint submitted successfully!");
-              
-              // Reset form
-              complaintForm.reset();
-              previewImg.classList.add("d-none");
-              previewImg.src = "";
-              photoInput.value = "";
-              aiResultBox.classList.add("d-none");
-              categoryError.classList.add("d-none");
-              if (btnSubmitComplaint) {
-                btnSubmitComplaint.disabled = true;
-              }
-              aiPredictedCategory = null; // Reset AI prediction
-            } else {
-              throw new Error('Failed to submit complaint');
-            }
-          } catch (error) {
-            console.error("Error submitting complaint:", error);
-            alert("Error submitting complaint. Please try again.");
-          }
-        });
-      }
-
-      // Stop camera when leaving page (optional safety)
-      window.addEventListener("beforeunload", stopCamera);
-    </script>
-  </body>
 </html>

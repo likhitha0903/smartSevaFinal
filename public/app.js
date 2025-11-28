@@ -542,35 +542,34 @@ document.addEventListener("DOMContentLoaded", loadNavbarAuth);
   // you can call renderNavbarAuth() again after login/signup success.
 
 document.addEventListener("DOMContentLoaded", () => {
-  const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+  const currentURL = window.location.pathname.split("/").pop().toLowerCase();
   const currentHash = window.location.hash.toLowerCase();
 
   document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
-    const linkHref = link.getAttribute("href")?.toLowerCase() || "";
+    let href = link.getAttribute("href")?.toLowerCase() || "";
 
-    // Case 1: Exact page match
-    if (linkHref === currentPage && currentPage !== "") {
+    // normalize "./ourai.html" → "ourai.html"
+    href = href.replace("./", "");
+
+    // --- Case 1: Exact page match ---
+    if (href === currentURL && currentURL !== "") {
       link.classList.add("active");
       return;
     }
 
-    // Case 2: index sections (#about, #contact, etc.)
-    if (currentPage === "index.html") {
-      if (linkHref.includes(currentHash) && currentHash !== "") {
-        link.classList.add("active");
-        return;
-      }
+    // --- Case 2: index.html#section ---
+    if (currentURL === "index.html" && href.includes(currentHash) && currentHash !== "") {
+      link.classList.add("active");
+      return;
     }
 
-    // Case 3: Home page of domain without filename (like domain.com/)
-    if ((currentPage === "" || currentPage === "index.html") && linkHref.includes("#home")) {
+    // --- Case 3: domain.com/ root home ---
+    if ((currentURL === "" || currentURL === "index.html") && href === "index.html#home") {
       link.classList.add("active");
+      return;
     }
   });
 });
-
- 
-
 
 document.addEventListener("DOMContentLoaded", async function () {
   const modal = document.getElementById("disclaimer-modal");

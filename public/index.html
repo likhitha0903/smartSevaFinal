@@ -5,15 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SmartSeva — Smart Grievance Portal</title>
   <link rel="shortcut icon" href="./assets/governance.png" type="image/png">
-
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
   <!-- App CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -28,8 +25,7 @@
 
     <!-- LEFT: Brand -->
     <a class="navbar-brand d-flex align-items-center gap-2" href="index.html#home">
-      <img src="./assets/icon.png"
-           width="150" height="50" alt="SmartSeva" style="border-radius:8px;object-fit:cover;">
+      <img src="./assets/icon.png" width="150" height="50" alt="SmartSeva" style="border-radius:8px;object-fit:cover;">
     </a>
 
     <!-- Mobile Toggler -->
@@ -44,15 +40,13 @@
       <!-- CENTER: main links -->
       <ul class="navbar-nav mx-auto mb-2 mb-md-0">
         <li class="nav-item">
-          <a class="nav-link mx-3" href="index.html#home">Home</a>
+          <a class="nav-link me-3" href="index.html#home">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link me-3" href="aboutUs.html">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link me-3" href="./ourai.html">
-           OUR AI
-          </a>
+          <a class="nav-link me-3" href="./ourai.html">OUR AI</a>
         </li>
         <li class="nav-item">
           <a class="nav-link me-3" href="dashboard.html">Dashboard</a>
@@ -64,50 +58,28 @@
 
       <!-- RIGHT: language + auth -->
       <div class="d-flex align-items-center gap-2 ms-md-0 ms-auto">
-
-        <!-- Language dropdown -->
-        <!-- <div class="dropdown">
-          <button class="btn btn-light border dropdown-toggle py-1 px-2"
-                  id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-            Language
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
-            <li><button class="dropdown-item" type="button">English</button></li>
-            <li><button class="dropdown-item" type="button">हिंदी</button></li>
-            <li><button class="dropdown-item" type="button">తెలుగు</button></li>
-          </ul>
-        </div> -->
        <!-- AUTH AREA -->
       <div class="ms-1">
-
-  <div id="navAuthLoggedOut" class="dropdown">
-    <button class="btn btn-outline-primary dropdown-toggle py-1 px-3"
-            type="button" data-bs-toggle="dropdown">
-      Login
-    </button>
-    <ul class="dropdown-menu dropdown-menu-end">
-      <li><a class="dropdown-item" href="login.html">User Login</a></li>
-      <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="adminlogin.html">Admin Login</a></li>
-    </ul>
-  </div>
-
-  <div id="navAuthLoggedIn" class="dropdown d-none">
-    <button class="btn btn-light dropdown-toggle d-flex align-items-center gap-2 py-1 px-2"
-            type="button" data-bs-toggle="dropdown">
-
-      <div id="navUserAvatar"
+        <div id="navAuthLoggedOut" class="dropdown">
+          <button class="btn btn-outline-primary dropdown-toggle py-1 px-3" type="button" data-bs-toggle="dropdown"> Login </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="login.html">User Login</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="adminlogin.html">Admin Login</a></li>
+          </ul>
+        </div>
+        <div id="navAuthLoggedIn" class="dropdown d-none">
+          <button class="btn btn-light dropdown-toggle d-flex align-items-center gap-2 py-1 px-2"type="button" data-bs-toggle="dropdown">
+            <div id="navUserAvatar"
            class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center"
-           style="width:32px;height:32px;font-size:.9rem;font-weight:700;">
-        U
-      </div>
-
-      <span id="navUserName" class="small fw-semibold">User</span>
-    </button>
+           style="width:32px;height:32px;font-size:.9rem;font-weight:700;">U
+          </div>
+          <span id="navUserName" class="small fw-semibold">User</span>
+          </button>
 
     <ul class="dropdown-menu dropdown-menu-end">
       <li><a class="dropdown-item" href="profile.html">Profile</a></li>
-      <li><a class="dropdown-item" href="dashboard.html">My Complaints</a></li>
+      <li><a class="dropdown-item" href="dashboard.html">My Grievances</a></li>
       <li><hr class="dropdown-divider"></li>
       <li><button class="dropdown-item text-danger" id="btnNavLogout">Logout</button></li>
     </ul>
@@ -122,7 +94,6 @@
 
   <!-- HERO VIDEO SECTION -->
   <section id="hero-video" class="position-relative w-100">
-    <!-- The video: autoplay, muted, loop, playsinline for mobile -->
     <video id="heroVideo" class="video-bg" autoplay muted loop playsinline poster="./assets/video 2.mp4" aria-hidden="true">
       <source src="./assets/video 2.mp4" type="video/webm">
       <source src="./assets/video 2.mp4" type="video/mp4">
@@ -131,11 +102,11 @@
 
     <!-- Overlay (dark gradient + centered content) -->
     <div class="hero-overlay d-flex align-items-center justify-content-center">
-      <div class="hero-content text-center text-white px-3">
+      <!-- <div class="hero-content text-center text-white px-3">
         <h1 class="hero-title mb-2">SmartSeva
         </h1>
         <h6 class="hero-sub mb-3">A Smarter Way to Reach Your Government</h6>
-      </div>
+      </div> -->
     </div>
   </section>
 
@@ -144,7 +115,7 @@
 
     <!-- Heading -->
     <div class="text-center mb-4">
-      <h2 class="fw-extrabold purpose-title">SmartSeva</h2>
+      <h2 class="fw-extrabold purpose-title heading">SmartSeva</h2>
       <p class="purpose-tagline mt-2">
         Transforming citizen grievances into responsive, real-time governance.
       </p>
@@ -170,7 +141,7 @@
                     </div>
 
                     <p>
-                        SmartSeva uses AI technologies such as complaint understanding, image severity 
+                        SmartSeva uses AI technologies such as grievance understanding, image severity 
                         detection, and smart routing to make sure every issue reaches the right team 
                         without delay.
                     </p>
@@ -182,8 +153,6 @@
 
                 </div>
                 <a href="./aboutUs.html" class="btn btn-success mt-2">Learn More</a>
-                <!-- <button class="btn btn-success mt-2">learn more</button> -->
-   <!-- <a href="./garbage.html" class="link-text">Learn More</a> -->
             </div>
 
       <!-- RIGHT: highlight / benefits card -->
@@ -199,7 +168,7 @@
         <div class="purpose-highlights m-0">
           <div class="ph-item">
             <i class="bi bi-check-circle-fill"></i>
-            <span>AI-assisted issue classification for clearer, consistent complaint categories.</span>
+            <span>AI-assisted issue classification for clearer, consistent grievance categories.</span>
           </div>
           <div class="ph-item">
             <i class="bi bi-check-circle-fill"></i>
@@ -210,12 +179,6 @@
             <span>Transparent tracking so citizens always know what’s happening next.</span>
           </div>
         </div>
-
-        <!-- <div class="purpose-stats">
-          <span class="purpose-stat">⏱ Designed for time-bound SLAs</span>
-          <span class="purpose-stat">🧩 Integrates with existing systems</span>
-          <span class="purpose-stat">📍 Location-aware from day one</span>
-        </div> -->
       </aside>
 
     </div>
@@ -227,8 +190,7 @@
   <div class="container-lg px-3">
 
     <div class="text-center mb-4">
-      <h2 class="h2 fw-extrabold brand-text">Major Issues Faced by Citizens</h2>
-      
+      <h2 class="h2 fw-extrabold brand-text heading">Major Issues Faced by Citizens</h2>
       <p class="text-body-secondary fs-5">SmartSeva identifies and addresses the most pressing civic challenges affecting daily life.</p>
     </div>
 
@@ -428,7 +390,7 @@
     </div>
   </div>
       <div class="text-center mb-4">
-        <h3 class="h2 fw-extrabold brand-text">Report by Category</h3>
+        <h3 class="h2 fw-extrabold brand-text heading">Report by Category</h3>
         <!-- <p class="text-body-secondary">Choose a category and take quick action</p> -->
       </div>
 
@@ -486,68 +448,6 @@
     </div>
   </section>
 
-    <!-- HOW IT WORKS / ROUTE MAP -->
-  <section id="how-it-works" class="py-5 bg-white route-section">
-    <div class="container-lg px-3">
-
-      <div class="text-center mb-4 reveal">
-        <h2 class="h1 fw-extrabold brand-text mb-2">How to Raise a Complaint</h2>
-        <p class="text-body-secondary mb-0">Follow these simple steps — it takes less than a minute.</p>
-      </div>
-
-      <!-- Responsive grid -->
-      <div class="steps-grid" id="chooseDepartment" role="list" aria-label="Complaint steps">
-
-        <!-- Step 1 -->
-                <article class="step-card reveal" role="button" data-step="1" tabindex="0" aria-label="Identify Issue">
-                    <div class="step-head">
-                        <span class="step-number">1</span>
-                        <span class="step-icon"><i class="bi bi-search"></i></span>
-                    </div>
-                    <h5 class="step-title">Identify Issue</h5>
-                    <p class="step-desc">Choose the type of problem you're facing. AI helps if the category is unclear.</p>
-                </article>
-
-                <!-- Step 2 -->
-                <article class="step-card reveal h-100" role="button" data-step="2" tabindex="0" aria-label="Capture Details">
-                    <div class="step-head">
-                        <span class="step-number">2</span>
-                        <span class="step-icon"><i class="bi bi-pencil-square"></i></span>
-                    </div>
-                    <h5 class="step-title">Capture Details</h5>
-                    <p class="step-desc">Briefly describe the issue and confirm the location for proper routing.</p>
-                </article>
-
-                <!-- Step 3 -->
-                <article class="step-card reveal" role="button" data-step="3" tabindex="0" aria-label="Upload Evidence">
-                    <div class="step-head">
-                        <span class="step-number">3</span>
-                        <span class="step-icon"><i class="bi bi-cloud-arrow-up"></i></span>
-                    </div>
-                    <h5 class="step-title">Upload Evidence</h5>
-                    <p class="step-desc">Add a photo or video. AI analyses severity and classifies the issue.</p>
-                </article>
-
-                <!-- Step 4 -->
-                <article class="step-card reveal" role="button" data-step="4" tabindex="0" aria-label="Submit & Track">
-                    <div class="step-head">
-                        <span class="step-number">4</span>
-                        <span class="step-icon"><i class="bi bi-send-check"></i></span>
-                    </div>
-                    <h5 class="step-title">Submit & Track Status</h5>
-                    <p class="step-desc">Submit your report and track real-time updates through SmartSeva.</p>
-                </article>
-
-      </div>
-
-      <div class="text-center mt-3 reveal">
-        <p class="text-muted ">Average resolution time: 2–5 days for high-priority issues</p>
-        <!-- <a href="./ourai.html" class="buttonraise link-text py-2 px-4">Start Your Complaint</a> -->
-      </div>
-
-    </div>
-  </section>
-
   <!-- IMPACT SECTION -->
   <section id="impact" class="impact-section py-5">
     <div class="container-lg">
@@ -557,7 +457,7 @@
               style="background:rgba(1,51,105,.06); color:var(--accent); border:1px solid var(--border);">
           Voices of Impact
         </span>
-        <h2 class="h1 fw-extrabold mt-3 brand-text">Real Stories from SmartSeva</h2>
+        <h2 class="h1 fw-extrabold mt-3 brand-text heading">Real Stories from SmartSeva</h2>
         <p class="text-body-secondary">How timely grievance and accountable follow-ups changed real neighbourhoods.</p>
       </div>
 
@@ -610,9 +510,9 @@
     <div class="container-lg px-3">
       <!-- Header -->
       <div class="text-center mb-4 reveal">
-        <h2 class="h1 fw-extrabold brand-text mb-2">SmartSeva — Faster resolutions, more accountability</h2>
+        <h2 class="h1 fw-extrabold brand-text mb-2 heading">SmartSeva — Faster resolutions, more accountability</h2>
         <p class="fs-5 text-body-secondary mt-3 reveal">
-          Submit a complaint in under a minute. Our AI prioritizes urgent cases so departments act faster — you track progress all the way.
+          Submit your grievance in under a minute. Our AI prioritizes urgent cases so departments act faster — you track progress all the way.
         </p>
       </div>
 
@@ -625,9 +525,15 @@
               <div class="feature-icon bg-primary text-white rounded-3 d-flex align-items-center justify-content-center" aria-hidden="true">
                 <i class="bi bi-people-fill" aria-hidden="true"></i>
               </div>
+
               <div>
                 <h3 class="h5 brand-text mb-1">Citizen-first</h3>
-                <p class="small text-body-secondary mb-0">Simple forms, media uploads, and live tracking keep citizens informed end-to-end.</p>
+                <p class="small text-body-secondary mb-0">
+                  Simple and intuitive grievance forms with photo uploads.  
+                  Citizens get instant acknowledgment, live status updates, and clear timelines until resolution.
+                </p>
+
+                <!-- <p class="small text-body-secondary mb-0">Simple forms, media uploads, and live tracking keep citizens informed end-to-end.</p> -->
               </div>
             </div>
           </div>
@@ -642,7 +548,12 @@
               </div>
               <div>
                 <h3 class="h5 brand-text mb-1">AI Prioritization</h3>
-                <p class="small text-body-secondary mb-0">NLP + Vision models tag grievance, detect sentiment and urgency for faster action.</p>
+                <p class="small text-body-secondary mb-0">
+                  Our AI studies grievance type, category, and severity level from the submitted data.  
+                  Urgent issues like safety hazards, public health risks, or major civic failures are auto-flagged for faster action.
+                </p>
+
+                <!-- <p class="small text-body-secondary mb-0">NLP + Vision models tag grievance, detect sentiment and urgency for faster action.</p> -->
               </div>
             </div>
           </div>
@@ -657,7 +568,11 @@
               </div>
               <div>
                 <h3 class="h5 brand-text mb-1">Actionable Analytics</h3>
-                <p class="small text-body-secondary mb-0">Department-wise trends, SLA breaches and heatmaps to improve service delivery.</p>
+                <p class="small text-body-secondary mb-0">
+                  Track department-wise performance with real-time dashboards.  
+                  Identify recurring issues, SLA delays, and hotspot locations to improve service delivery.
+                </p>
+                <!-- <p class="small text-body-secondary mb-0">Department-wise trends, SLA breaches and heatmaps to improve service delivery.</p> -->
               </div>
             </div>
           </div>
@@ -669,7 +584,7 @@
         <div class="col-sm-4">
           <div class="stat-tile shadow-sm text-center py-3">
             <div class="stat-value" data-target="12480">0</div>
-            <div class="stat-label">Complaints resolved</div>
+            <div class="stat-label">Grievances resolved</div>
           </div>
         </div>
         <div class="col-sm-4">
@@ -690,12 +605,11 @@
       <div id="raise" class="reveal mt-4">
         <div class="cta-band d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between gap-3">
           <div>
-            <h3 class="h4 fw-extrabold brand-text mb-1">Ready to raise a complaint?</h3>
+            <h3 class="h4 fw-extrabold brand-text mb-1">Ready to raise a grievance?</h3>
             <p class="small text-body-secondary mb-0">It takes less than a minute. No login required for basic grievance.</p>
           </div>
           <div class="d-flex gap-2">
-            <!-- <a href="#complaintForm" class="btn btn-primary btn-lg" id="cta-raise p-3">Our Ai</a> -->
-            <a href="#about-details" class="btn btn-outline-theme" id="cta-learn">Learn how it works</a>
+            <a href="./ourai.html" class="btn btn-outline-theme" id="cta-learn">Learn how it works</a>
           </div>
         </div>
       </div>
@@ -706,7 +620,7 @@
   <section id="faq" class="py-5 bg-white-80 border-top border-bottom">
     <div class="container-lg">
       <div class="text-center mb-4">
-        <h2 class="h2 fw-extrabold brand-text">Frequently Asked Questions</h2>
+        <h2 class="h2 fw-extrabold brand-text heading">Frequently Asked Questions</h2>
         <p class="text-body-secondary mb-0">Answers about filing grievance, tracking, AI prioritization, privacy and more.</p>
       </div>
 
@@ -720,13 +634,14 @@
               <h3 class="accordion-header" id="faqHeading1">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
-                  How do I raise a complaint on SmartSeva?
+                  How do I raise a grievance
+                   on SmartSeva?
                 </button>
               </h3>
               <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1"
                    data-bs-parent="#faqAccordion">
                 <div class="accordion-body">
-                  Sign in (or continue as guest if enabled), choose the correct department, describe the issue, attach photos or video, and submit. You’ll receive a unique token to track the complaint.
+                  Sign in (or continue as guest if enabled), choose the correct department, describe the issue, attach photos or video, and submit. You’ll receive a unique token to track the grievance.
                 </div>
               </div>
             </div>
@@ -758,7 +673,7 @@
               <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3"
                    data-bs-parent="#faqAccordion">
                 <div class="accordion-body">
-                  Our models analyse the complaint text and attached images to detect category, severity, hazards (e.g., exposed wires, deep potholes), and sentiment (urgent vs routine). The system then suggests a priority so officers can address the most critical issues first.
+                  Our models analyse the grievance text and attached images to detect category, severity, hazards (e.g., exposed wires, deep potholes), and sentiment (urgent vs routine). The system then suggests a priority so officers can address the most critical issues first.
                 </div>
               </div>
             </div>
@@ -768,13 +683,13 @@
               <h3 class="accordion-header" id="faqHeading4">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
-                  How long will it take to resolve my complaint?
+                  How long will it take to resolve my grievance
                 </button>
               </h3>
               <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4"
                    data-bs-parent="#faqAccordion">
                 <div class="accordion-body">
-                  Time-to-resolution varies by department and priority. After submission you can track the complaint status using your token. High priority/urgent issues are routed to immediate action where possible; follow-up timelines appear in the complaint details.
+                  Time-to-resolution varies by department and priority. After submission you can track the grievancestatus using your token. High priority/urgent issues are routed to immediate action where possible; follow-up timelines appear in the grievance details.
                 </div>
               </div>
             </div>
@@ -784,7 +699,7 @@
               <h3 class="accordion-header" id="faqHeading5">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
-                  Do I need to create an account to file a complaint?
+                  Do I need to create an account to file a grievance
                 </button>
               </h3>
               <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5"
@@ -806,7 +721,7 @@
               <div id="faqCollapse6" class="accordion-collapse collapse" aria-labelledby="faqHeading6"
                    data-bs-parent="#faqAccordion">
                 <div class="accordion-body">
-                  Use the complaint page to request escalation or add comments. If unresolved, follow the escalation path shown in complaint details (escalation to senior officer / grievance cell). You may also contact support via the helpline listed in the footer.
+                  Use the grievance page to request escalation or add comments. If unresolved, follow the escalation path shown in grievance details (escalation to senior officer / grievance cell). You may also contact support via the helpline listed in the footer.
                 </div>
               </div>
             </div>
@@ -822,23 +737,7 @@
               <div id="faqCollapse7" class="accordion-collapse collapse" aria-labelledby="faqHeading7"
                    data-bs-parent="#faqAccordion">
                 <div class="accordion-body">
-                  SmartSeva follows data protection practices: personal data is used only for complaint processing and communication. Uploaded media is stored securely and shared only with relevant departments. For details see the Privacy policy link in the footer.
-                </div>
-              </div>
-            </div>
-
-            <!-- 8 -->
-            <div class="accordion-item">
-              <h3 class="accordion-header" id="faqHeading8">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faqCollapse8" aria-expanded="false" aria-controls="faqCollapse8">
-                  Which languages are supported?
-                </button>
-              </h3>
-              <div id="faqCollapse8" class="accordion-collapse collapse" aria-labelledby="faqHeading8"
-                   data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  SmartSeva supports multiple Indian languages (English, हिंदी, తెలుగు, தமிழ் — and more as added). Use the language selector in the header to switch the UI. Complaints written in local languages will be processed and translated where needed for routing and AI analysis.
+                  SmartSeva follows data protection practices: personal data is used only for grievance processing and communication. Uploaded media is stored securely and shared only with relevant departments. For details see the Privacy policy link in the footer.
                 </div>
               </div>
             </div>
@@ -910,7 +809,7 @@
             <i class="bi bi-lightning-charge-fill me-1"></i> Real-time Tracking
           </span>
           <span class="badge smart-footer-pill">
-            <i class="bi bi-shield-check me-1"></i> Verified Complaints
+            <i class="bi bi-shield-check me-1"></i> Verified Grievances
           </span>
         </div>
       </div>
@@ -932,9 +831,7 @@
         <h6 class="smart-footer-heading mb-3">Support</h6>
         <ul class="list-unstyled m-0 smart-footer-links">
           <li><a href="#">Help & FAQs</a></li>
-          <!-- <li><a href="#">How SmartSeva Works</a></li> -->
           <li><a href="#">Citizen Charter</a></li>
-          <!-- <li><a href="#">Data & Privacy</a></li> -->
         </ul>
 
         <div class="mt-3 small text-muted">
@@ -987,20 +884,6 @@
   </div>
 </footer>
 
-
-
-<!-- DISCLAIMER POPUP (first time only)
-<div id="disclaimer-modal" class="disclaimer-backdrop d-none" aria-hidden="true">
-  <div class="disclaimer-dialog">
-    <button type="button" class="disclaimer-close" aria-label="Close disclaimer">
-      &times;
-    </button>
-    CHANGE THE SRC TO YOUR IMAGE PATH 
-    <img src="./assets/Dicleiamer.png"
-         alt="Disclaimer"
-         class="disclaimer-img">
-  </div>
-</div> -->
 <!-- DISCLAIMER POPUP -->
 <div id="disclaimer-modal" class="disclaimer-backdrop d-none" aria-hidden="true">
   <div class="disclaimer-dialog" style="background-color: rgba(235, 235, 141, 0.994);">
@@ -1017,10 +900,6 @@
 
   </div>
 </div>
-
-
-
-
 
   <!-- Bootstrap JS bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -1089,7 +968,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loggedOut.classList.add("d-none");
     loggedIn.classList.remove("d-none");
 
-    // Put the user's name
     userNameEl.textContent = user.name;
 
     // Avatar 1st letter
